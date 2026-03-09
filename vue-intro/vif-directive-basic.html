@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if Directive Sample</title>
+    <style>
+        #app {
+            border: dashed black 1px;
+            width: 250px;
+            padding-left: 20px;
+            font-weight: bold;
+            background-color: lightgreen;   
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Sample directive 'v-if' & 'v-else'</h3>
+    <div id="app">        
+        <p v-if="typeWriteInStockCount > 0">
+            in stock
+        </p>
+        <p v-else>
+            Not in stock
+        </p>
+
+        <h6>Sample directive 'v-if' & 'v-else-if' & 'v-else'</h6>
+        <p v-if="typeWriteInStockCount >= 3">
+            in stock {{typeWriteInStockCount}}
+        </p>
+        <p v-else-if="typeWriteInStockCount == 2">
+            in stock but only {{typeWriteInStockCount}} left
+        </p>
+        <p v-else>
+            Not in stock
+        </p>
+
+        <h6>Use the return value from function</h6>
+        <p>The text: "{{text}}"</p>
+        <p v-if="text.includes('gudeg')">The text include the word 'sate'</p>
+        <p v-else>The word 'gudeg' is not in the text</p>
+
+        <h6>Expanded div, use the return value from function</h6>
+        <div v-if="text.includes('pizza')">
+            <p>The text include the word 'pizza'</p>
+            <img src="img_pizza.jpg" width="100" height="100">
+        </div>
+        <p v-else>The word 'pizza' is not in the text</p>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    typeWriteInStockCount : 2,
+                    text: "I like pecel, gado-gado, sate, and pizza is sometime"
+                }
+            }
+        })
+       
+        app.mount('#app');
+    </script>
+</body>
+</html>

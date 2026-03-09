@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind Sample</title>
+    <style>
+        .pinkBG {
+            background-color: lightpink;
+        }
+        .impClass {
+            background-color: lightgreen;
+        }
+        .myClass {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:style="{fontSize: size}">
+            --- Text Example Cara 1 ---
+        </div>
+        <div v-bind:style="{fontSize: size2 + 'px'}">
+            --- Text Example Cara 2 ---
+        </div>
+        <div v-bind:style="{'font-size': size2 + 'px'}">
+            --- Text Example Cara 3 ---<br/>
+            --- Using kebab-case (not Recommended)
+        </div>
+        <div v-bind:style="{backgroundColor: 'hsl(' + bgVal +',80%,80%)'}">
+            Notice the background color on this div-tag
+        </div>
+        <div v-bind:style="{backgroundColor: isImportant? 'lightcoral' : 'lightgray'}">
+            Conditional background color using ternary
+        </div>
+        <div v-bind:class="className">
+            'v-bind' used to changed class : {{ className }}
+        </div>
+        <div v-bind:class="{myClass: isShow}">
+            'v-bind' is used to assign class with true/false
+            The browser set 'myClass' -> {{isShow}} on the div when set to true
+        </div>
+        <div v-bind:class="{myClass: !isShow}">
+            'v-bind' is used to assign class with true/false
+            The browser not set 'myClass' -> {{!isShow}} on the div when set to false
+        </div>
+        <div :class="vueClass">
+            Shorthand for v-bind is <strong>':'</strong>
+        </div>
+        <div v-bind:class="vueClass"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    vueClass: 'pinkBG',
+                    size: '28px',
+                    size2: '26',
+                    bgVal: '101',
+                    isImportant: false,
+                    className: 'impClass',
+                    isShow: true
+                }
+            }
+        })
+       
+        app.mount('#app');
+    </script>
+</body>
+</html>
