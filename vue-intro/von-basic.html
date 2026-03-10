@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Event Samples</title>
+    <script src="vue.global.js"></script>
+    <style>
+        .app_box {
+            border: dashed black 1px;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+    
+        .app_box>button {
+            display: block;
+            margin: auto;
+        }
+    
+        #lightDiv {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+    
+        #lightDiv>img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    
+        #lightDiv>div {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+    
+        .app_box > div {
+            width: 200px;
+            height: 80px;
+        }
+        
+        .app_box span {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .app_box > img {
+            float: right;
+            width: 55%;
+        }
+
+        li:hover {
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+
+        .app_box > ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .app_box li {
+            padding-left: 6px;
+            border-radius: 5px;
+            width: 250px;
+        }
+        </style>
+</head>
+<body>
+    <div id="app">
+        <div class="app_box">
+            <div id="lightDiv">
+                <div v-show="lightOn"></div>
+                <img src="img_lightBulb.svg">
+            </div>
+            <button v-on:click="lightOn = !lightOn">Switch Light</button>
+        </div>        
+        <br/>
+        <br/>
+        <div class="app_box">
+            <img src="img_moose.jpg" alt="Moose" width="400">
+            <p>{{"Moose count: " + count}}</p>
+            <button v-on:click="count++">Count Moose</button>
+        </div>
+        <br/><br/>
+        <div class="app_box">
+            <h5>oninput Event</h5>
+            <input v-on:input="inpCount++">
+            <p>{{"Input event occured: " + inpCount}}</p>
+        </div>
+        <br /><br />
+        <div class="app_box">
+            <h4>Mouse move event</h4>
+            <h5>Move the mouse pointer over the box below</h5>
+            <div v-on:mousemove="colorVal=Math.floor(Math.random()*360)" 
+                v-bind:style="{backgroundColor:'hsl(' + colorVal + ',60%,60%)'}"></div>
+            <p><span>backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 80%, 80%)</span></p>
+        </div>
+        <br /><br />
+        <div class="app_box">
+            <h5>Use v-on in a v-for Loop</h5>
+            <img v-bind:src="imgUrl" width="100" height="100">
+            <ol>
+                <li v-for="x in foodImages" v-on:click="imgUrl = x.url">
+                    {{x.name}}
+                </li>
+            </ol>
+        </div>
+        <br/><br/>
+        <div class="app_box">
+            <h5>Shorthand for v-on</h5>
+            <div id="lightDiv">
+                <div v-show="lightOn"></div>
+                <img src="img_lightBulb.svg">
+            </div>
+            <button @:click="lightOn = !lightOn">Switch Light</button>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    count: 0,
+                    lightOn:false,
+                    inpCount: 0,
+                    colorVal: 50,
+                    imgUrl: 'Pecel.jpg',
+                    foodImages: [
+                        { name: 'Pecel', url: 'Pecel.jpg' },
+                        { name: 'Gado-gado', url: 'Gado-gado.jpg' },
+                        { name: 'Tempe orek', url: 'Tempe orek.jpg' },
+                        { name: 'Sate kikil', url: 'Sate kikil.jpg' },
+                        { name: 'Garang Asem Patin', url: 'Garang Asem Patin.jpg' }
+                    ]
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
