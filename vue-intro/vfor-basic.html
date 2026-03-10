@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div id="app">
+        <h5>List Rendering</h5>
+        <ol>
+            <li v-for="x in manyFoods">
+                {{x}}
+            </li>
+        </ol>
+        <br/>
+        <h5>Loop through an Array</h5>
+        <div>
+            <img v-for="x in foodImages" v-bind:src="x" height="100" width="100">
+        </div>
+        <br/>
+        <h5>Loop through an Object</h5>
+        <div>
+            <figure v-for="x in foodObjects">
+                <img v-bind:src="x.url" height="100" width="100">
+                <figcaption>{{x.name}}</figcaption>
+            </figure>
+        </div>
+        <br/>
+        <h5>Get The Index</h5>
+        <p v-for="(x, index) in manyFoods">
+            {{index}} : "{{x}}"<br/>
+        </p>    
+        <h5>Get The Index (from Objects)</h5>
+        <p v-for="(x, index) in foodObjects">
+            {{index}} : "{{x.name}}, URL: {{x.url}}"<br />
+        </p>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    manyFoods: [
+                        'Pecel',
+                        'Gado-gado',
+                        'Tempe orek',
+                        'Sate kikil',
+                        'Garang Asem Patin'
+                    ],
+                    foodImages: [
+                        'Pecel.jpg',
+                        'Gado-gado.jpg',
+                        'Tempe orek.jpg',
+                        'Sate kikil.jpg',
+                        'Garang Asem Patin.jpg'
+                    ],
+                    foodObjects: [
+                        {name: 'Pecel', url: 'Pecel.jpg' },
+                        {name: 'Gado-gado', url: 'Gado-gado.jpg'},
+                        {name: 'Tempe orek', url: 'Tempe orek.jpg'},
+                        {name: 'Sate kikil', url: 'Sate kikil.jpg'},
+                        {name: 'Garang Asem Patin', url: 'Garang Asem Patin.jpg'}
+                    ]
+                }
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
