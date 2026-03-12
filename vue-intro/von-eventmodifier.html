@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on Event Modifier</title>
+    <style>
+        #green {
+            background-color: lightgreen; 
+        }
+
+        .app_mouse {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 20px;
+        }
+        
+        .app_mouse > div {
+            width: 160px;
+            padding: 20px;
+            cursor: default;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>Click the button to create an alert:</p>
+        <button v-on:click="createAlert">Create Alert (without once)</button>
+
+        <p>Click the button to create an alert (with once):</p>
+        <button v-on:click.once="createAlert2">Create Alert (wit once)</button>
+
+        <br/>
+        <div>
+            <p>Keyboard Key Event Modifiers</p>
+            <p>keydown, keypress, and keyup</p>
+            <input type="text" v-on:keydown="getKey">
+            <p id="green">{{keyValue}}</p>
+        </div>
+
+        <br/>
+        <div>
+            <p>Create Alert Combination key</p>
+            <p>Key Modifier: .enter, .tab, .delete, .esc, .space, .up, .down, .left, .right</p>
+            <p>Or Letter: .s, etc</p>
+            <p>System modifier key: .alt, .ctrl, .shift or .meta</p>
+
+            <p>Try pressing the 's' key</p>
+            <textarea v-on:keyup.s="createAlerts"></textarea>
+
+            <p>Try pressing the 's' key and ctrl key in combinations</p>
+            <textarea v-on:keyup.ctrl.s="createAlerts1"></textarea>
+
+            <p>Mouse button modifier</p>
+            <div class="app_mouse">
+                <div v-on:click.right.ctrl="changeColor" v-bind:style="{backgroundColor:'hsl(' + bgColor + '80%,70%)'}">
+                    <p>Press Right mouse button here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    keyValue: '',
+                    bgColor: 0
+                }   
+            },
+            methods: {
+                createAlert() {
+                    alert("You clicked the button! (without once)")
+                },
+                createAlert2() {
+                    alert("You clicked the button! (with once)")
+                },
+                getKey(event) {
+                    this.keyValue = event.key
+                },
+                createAlerts(){
+                    alert("You pressed the 's' key!")
+                },
+                createAlerts1() {
+                    alert("You pressed the 's' key and ctrl key in combinations!")
+                },
+                changeColor(){
+                    this.bgColor += 50
+                    alert("you pressed right click and ctrl key in combinations!")
+                }
+            }
+        })
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

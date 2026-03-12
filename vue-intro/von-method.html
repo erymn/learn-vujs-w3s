@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on Methods</title>
+    <style>
+        .app_box > div {
+            width: 160px;
+            height: 80px;
+            background-color: lightcoral;
+            padding: 20px;
+        }
+
+        .app_box span {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-on:click="writeText">Click Me</div>
+        <p><span>{{text}}</span></p>
+
+        <br/>
+        <div class="app_box" v-on:mousemove="mousePos">
+            <p>Mouse Pointer Position (Event and Method)</p>
+            <div v-bind:style="{backgroundColor:'hsl(' + xPos + ',80%,60%)'}">
+                <span>xPos: {{xPos}}</span><br/>
+                <span>yPos: {{yPos}}</span>
+            </div>
+        </div>
+
+        <br/>
+        <div>
+            <p>Using TextArea</p>
+            <textarea v-on:input="writeText2" placeholder="Start writing..."></textarea><br/>
+            <span>{{text2}}</span>
+        </div>
+
+        <br />
+        <div>
+            <p>Passing Parameter Example</p>
+            <img src="img_moose.jpg">
+            <p>{{ "Moose count: " + count }}</p>
+            <button v-on:click="addMoose(+1)">+1</button>
+            <button v-on:click="addMoose(+5)">+5</button>
+            <button v-on:click="addMoose(-1)">-1</button>
+        </div>
+
+        <br/>
+        <div>
+            <p>Passing both Event and Argument</p>
+            <img src="img_tiger.jpg" id="tiger" v-on:click="myMethod($event,'Hello')">
+            <p>{{ msgAndId }}</p>
+        </div>
+
+        <br />
+        <div>
+            <p>Larger Example</p>
+            <div id="tigers">
+                <img src="img_tiger.jpg">
+                <button v-on:click="addAnimal($event,1)">+1</button>
+                <button v-on:click="addAnimal($event,5)">+5</button>
+                <button v-on:click="addAnimal($event,-1)">-1</button>
+            </div>
+            <div id="moose">
+                <img src="img_moose.jpg">
+                <button v-on:click="addAnimal($event,1)">+1</button>
+                <button v-on:click="addAnimal($event,5)">+5</button>
+                <button v-on:click="addAnimal($event,-1)">-1</button>      
+            </div>
+            <ul>
+                <li>Tigers: {{ tigers }} </li>
+                <li>Moose: {{ moose }} </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    text: '',
+                    xPos: 0,
+                    yPos: 0,
+                    text2: '',
+                    count: 0,
+                    msgAndId: '',
+                    tigers: 0,
+                    moose: 0
+                }
+            },
+            methods: {
+                writeText() {
+                    this.text = 'Generate from Methods'
+                },
+                mousePos(event) {
+                    this.xPos = event.offsetX,
+                    this.yPos = event.offsetY
+                },
+                writeText2() {
+                    this.text2 = event.target.value
+                },
+                addMoose(number){
+                    this.count += number;
+                },
+                myMethod(event, msg){
+                    this.msgAndId = msg + ", "
+                    this.msgAndId += event.target.id
+                },
+                addAnimal(e, number){
+                    if(e.target.parentElement.id == "tigers"){
+                        this.tigers += number
+                    }else {
+                        this.moose += number
+                    }
+                }
+            }
+        })
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
