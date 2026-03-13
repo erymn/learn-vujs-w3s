@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model More</title>
+</head>
+
+<body>
+    <div id="app">
+       <div>
+            <p>Dynamic Checkbox</p>
+            <form>
+                <p>Important items?
+                    <label>
+                        <input type="checkbox" v-model="important">
+                        {{ important }}
+                    </label>
+                </p>
+            </form>
+       </div>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    important: false
+                }
+            }
+        })
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

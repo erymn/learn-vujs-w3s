@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-model Forms</title>
+    <style>
+      form {
+        border: dashed black 1px;
+        width: 200px;
+        padding: 20px;
+      }
+
+      #app {
+        border: dashed black 1px;
+        display: inline-block;
+        padding: 0 20px;
+      }
+      #app label,
+      #app li {
+        padding: 5px;
+        border-radius: 5px;
+      }
+      #app label:hover,
+      #app li:hover {
+        cursor: pointer;
+        background-color: lightgray;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        margin: 2px;
+        background-color: rgb(211, 254, 211);
+      }
+      .impClass {
+        background-color: rgb(255, 202, 202);
+      }
+      #ulFound li {
+        text-decoration: line-through;
+        background-color: rgb(230, 230, 230);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Shopping List</h3>
+    <div id="app">
+      <form v-on:submit.prevent="addItem">
+        <p>
+          What you need?
+          <input
+            type="text"
+            required
+            placeholder="item name.."
+            v-model="itemName"
+          />
+        </p>
+        <p>
+          How many?
+          <input
+            type="number"
+            placeholder="number of items..."
+            v-model="itemNumber"
+          />
+        </p>
+        <p>
+          Important?
+          <label>
+            <input type="checkbox" v-model="important" />
+            {{ important }}
+          </label>
+        </p>
+        <p>
+          <button type="submit">Add Item</button>
+        </p>
+      </form>
+
+      <div>
+        <p>Shopping List Item(s)</p>
+        <ul id="ulToFind">
+          <li
+            v-for="item in shoppingList"
+            v-bind:class="{impClass: item.important}"
+            v-on:click="item.found = !item.found"
+            v-show="!item.found"
+          >
+            {{ item.name }}, {{item.number}}, {{important}}
+          </li>
+        </ul>
+        <ul id="ulFound">
+          <li
+            v-for="item in shoppingList"
+            v-bind:class="{impClass: item.important}"
+            v-on:click="item.found = !item.found"
+            v-show="item.found"
+          >
+            {{ item.name }}, {{item.number}}, {{important}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            itemName: "",
+            itemNumber: 0,
+            shoppingList: [],
+            important: false,
+            found: false,
+          };
+        },
+        methods: {
+          addItem() {
+            let item = {
+              name: this.itemName,
+              number: this.itemNumber,
+              important: this.important,
+              found: this.found,
+            };
+            this.shoppingList.push(item);
+            //this.shoppingList.push({name: this.itemName, number: this.itemNumber})
+
+            this.itemName = null;
+            this.itemNumber = null;
+            this.important = false;
+          },
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>

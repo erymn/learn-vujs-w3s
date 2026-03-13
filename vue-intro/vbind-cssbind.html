@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-bind CSS Binding</title>
+    <style>
+      .impClass {
+        font-weight: bolder;
+      }
+      .yelClass {
+        background-color: rgb(255, 255, 136);
+      }
+      #app > div {
+        border: dashed black 1px;
+        width: 200px;
+        margin: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Example: 'class' and 'v-bind:class'</h1>
+    <p>
+      The 'impClass' class is set in the normal way with the class attribute,
+      and the 'yelClass' class is set with v-bind:class. The result is that Vue
+      merges the classes so that the div element belongs to both classes.
+    </p>
+    <div id="app">
+      <p>Vue Merges 'class' And 'v-bind:class'</p>
+      <div class="impClass" v-bind:class="{yelClass: isYellow}">
+        Class impClass akan merge dengan yelClass dari inspect browser
+      </div>
+
+      <br />
+      <p>Assign more than one class with 'v-bind:class'</p>
+      <div v-bind:class="{yelClass: isYellow, impClass: isImportant}">
+        Tag v-bind:class bisa memiliki lebih dari 1 class
+      </div>
+
+      <br />
+      <p>Camel case vs kebab case notation with 'v-bind:style'</p>
+      <div
+        v-bind:style="{backgroundColor: 'lightpink', 'font-weight' : 'bolder'}"
+      >
+        seharusnya background pink dan teks tebal
+      </div>
+
+      <br />
+      <p>Array Syntax with 'v-bind:class'</p>
+      <div v-bind:class="[{impClass: isImportant}, 'yelClass']">
+        This div tag belongs to one or two classes depending on the isImportant
+        property.
+      </div>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            isYellow: true,
+            isImportant: true,
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
