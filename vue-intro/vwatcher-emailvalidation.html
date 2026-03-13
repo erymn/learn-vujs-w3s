@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Watcher - Email Validation</title>
+    <style>
+      #app {
+        border: dashed black 1px;
+        width: 200px;
+        padding: 0 10px 10px 10px;
+      }
+      #app > div {
+        width: 200px;
+        height: 50px;
+        border: solid black 1px;
+        background-color: lightgreen;
+      }
+      #app > p {
+        font-size: large;
+        font-weight: bold;
+      }
+      .valid {
+        color: green;
+      }
+      .invalid {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Example: Input for e-mail Address</h1>
+    <p>
+      A watcher is set up to watch the e-mail input. The user is informed if the
+      current e-mail address input is valid or invalid (missing @).
+    </p>
+    <p>
+      The user is also informed if the input just became valid with the last
+      input from the keyboard.
+    </p>
+    <div id="app">
+      <label>
+        <p>Type a valid e-mail address:</p>
+        <input type="email" v-model="inpAddress" />
+      </label>
+      <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p>
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            inpAddress: "",
+            feedbackText: "",
+            myClass: "invalid",
+          };
+        },
+        methods: {},
+        computed: {},
+        watch: {
+          inpAddress(newVal, oldVal) {
+            if (!newVal.includes("@")) {
+              this.feedbackText = "format email invalid coyyy";
+              this.myClass = "invalid";
+            } else if (!oldVal.includes("@") && newVal.includes("@")) {
+              this.myClass = "valid";
+              this.feedbackText = "Wis valid cuk";
+            } else {
+              this.feedbackText = "Wis valid cuk";
+            }
+          },
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
