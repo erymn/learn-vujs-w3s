@@ -1,7 +1,8 @@
 <template>
     <div v-on:click="countClicks">
-        <h2>{{ foodName }} <img src="../assets/img_quality.svg" v-show="isFavorite" width="32" height="32"></h2>
+        <h2>{{ foodName }} <img src="../assets/img_quality.svg" v-show="foodIsFavorite" width="32" height="32"></h2>
         <p>{{ foodDesc }}</p>
+        <button v-on:click="toggleFavorite">Favorite</button>
         <!-- <p>{{ message }}</p> -->
         <p id="red">Kamu telah klik aku {{ clicks }} klik</p>
     </div>
@@ -12,12 +13,18 @@
         data() {
             return  {
                 //message: 'Aku seneng ' + this.foodName,
-                clicks: 0
+                clicks: 0,
+                //1. Modify Props
+                foodIsFavorite: this.isFavorite
             }
         },
         methods: {
             countClicks() {
                 this.clicks++
+            },
+            //2. Modify Props
+            toggleFavorite() {
+                this.foodIsFavorite = !this.foodIsFavorite
             }
         },
         //Props as Object
