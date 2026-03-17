@@ -24,10 +24,19 @@
         props: {
             foodName: {
                 type: String,
-                required: true
+                required: true,
+                default: false
             },
-            foodDesc: String,
-            isFavorite: Boolean
+            foodDesc: {
+                type: String,
+                required: false,
+                default: 'ini adalah pesan default dari props object'
+            },
+            isFavorite: {
+                type: Boolean,
+                required: false,
+                default: false
+            }
         }
         // //Default PROPS
         // props: [
