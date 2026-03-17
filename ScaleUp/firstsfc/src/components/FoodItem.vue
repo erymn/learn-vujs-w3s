@@ -30,7 +30,14 @@
             foodDesc: {
                 type: String,
                 required: false,
-                default: 'ini adalah pesan default dari props object'
+                default: 'ini adalah pesan default dari props object',
+                validator: function(value) {
+                    if(20 < value.length && value.length < 40){
+                        return true
+                    }else{
+                        return false
+                    }
+                }
             },
             isFavorite: {
                 type: Boolean,
