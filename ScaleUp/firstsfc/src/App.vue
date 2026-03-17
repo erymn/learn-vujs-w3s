@@ -3,7 +3,11 @@
   <h1>Hello World!</h1>
   <h2>{{ message }}</h2>
 
-  <food-item/>
+  <div id="wrapper">
+  <food-item food-name="Apel" food-desc="Apel adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
+  <food-item food-name="Jeruk" food-desc="Jeruk adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
+  <food-item food-name="Kesemek" food-desc="Kesemek adalah buah yang tumbuh di pohon" v-bind:is-favorite="false"/>
+</div>
 </template>
 <style></style>
 <script>
@@ -27,6 +31,17 @@
 
   #app > div:hover {
     cursor: pointer;
+  }
+
+  #wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #wrapper > div {
+    border: dashed black 1px;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgreen;
   }
 </style>
 
