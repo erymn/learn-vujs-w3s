@@ -1,6 +1,6 @@
 <template>
     <div v-on:click="countClicks">
-        <h2>{{ foodName }} <img src="../assets/img_quality.svg" v-show="isFavorite" width="50" height="50"></h2>
+        <h2>{{ foodName }} <img src="../assets/img_quality.svg" v-show="isFavorite" width="32" height="32"></h2>
         <p>{{ foodDesc }}</p>
         <!-- <p>{{ message }}</p> -->
         <p id="red">Kamu telah klik aku {{ clicks }} klik</p>
@@ -20,9 +20,16 @@
                 this.clicks++
             }
         },
-        props: [
-            'foodName','foodDesc','isFavorite'
-        ]
+        //Props as Object
+        props: {
+            foodName: String,
+            foodDesc: String,
+            isFavorite: Boolean
+        }
+        // //Default PROPS
+        // props: [
+        //     'foodName','foodDesc','isFavorite'
+        // ]
     }
 </script>
 
