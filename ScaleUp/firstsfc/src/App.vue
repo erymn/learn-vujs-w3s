@@ -1,49 +1,59 @@
-
 <template>
   <h1>Hello World!</h1>
   <h2>{{ message }}</h2>
 
   <div id="wrapper">
-  <food-item food-name="Apel" food-desc="Apel adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
-  <!-- <food-item food-name="Jeruk" food-desc="Jeruk adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/> -->
-  <food-item food-name="Jeruk" v-bind:is-favorite="true"/>
-  <food-item food-name="Kesemek" food-desc="Kesemek adalah buah yang tumbuh di pohon" v-bind:is-favorite="false"/>
-</div>
+    <food-item food-name="Apel" food-desc="Apel adalah buah yang tumbuh di pohon" v-bind:is-favorite="true" />
+    <!-- <food-item food-name="Jeruk" food-desc="Jeruk adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/> -->
+    <food-item food-name="Jeruk" v-bind:is-favorite="true" />
+    <food-item food-name="Kesemek" food-desc="Kesemek adalah buah yang tumbuh di pohon" v-bind:is-favorite="false" />
+  </div>
+
+  <br />
+  <h2>Food</h2>
+  <p>Components created with v-for based on an array</p>
+  <div id="wrapper">
+    <food-item v-for="x in foods" v-bind:food-name="x"></food-item>
+  </div>
 </template>
 <style></style>
 <script>
-  export default {
-    data() {
-      return {
-        message: 'This is some text'
-      }
+import FoodItem from './components/FoodItem.vue';
+
+export default {
+  data() {
+    return {
+      message: 'This is some text',
+      foods: ['Apel', 'Jengkol', 'Pete', 'Anggur', 'Kesemek', 'Juwet']
     }
   }
+}
 </script>
 
 <style>
-  #app > div {
-    border: dashed black 1px;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightgreen;
-  }
+#app>div {
+  border: dashed black 1px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightgreen;
+}
 
-  #app > div:hover {
-    cursor: pointer;
-  }
+#app>div:hover {
+  cursor: pointer;
+}
 
-  #wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #wrapper > div {
-    border: dashed black 1px;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightgreen;
-  }
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#wrapper>div {
+  border: dashed black 1px;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightgreen;
+}
 </style>
 
 <!-- <script setup>
