@@ -22,7 +22,10 @@
         },
         //Props as Object
         props: {
-            foodName: String,
+            foodName: {
+                type: String,
+                required: true
+            },
             foodDesc: String,
             isFavorite: Boolean
         }

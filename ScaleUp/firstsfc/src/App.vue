@@ -4,7 +4,7 @@
   <h2>{{ message }}</h2>
 
   <div id="wrapper">
-  <food-item food-name="Apel" food-desc="Apel adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
+  <food-item food-desc="Apel adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
   <food-item food-name="Jeruk" food-desc="Jeruk adalah buah yang tumbuh di pohon" v-bind:is-favorite="true"/>
   <food-item food-name="Kesemek" food-desc="Kesemek adalah buah yang tumbuh di pohon" v-bind:is-favorite="false"/>
 </div>
