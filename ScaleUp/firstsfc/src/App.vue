@@ -15,16 +15,55 @@
   <div id="wrapper">
     <food-item v-for="x in foods" v-bind:food-name="x"></food-item>
   </div>
-</template>
-<style></style>
-<script>
-import FoodItem from './components/FoodItem.vue';
 
+  <br />
+  <h2>Food</h2>
+  <p>Food items are generated with v-for from the 'foods' array (use :key as unique id)</p>
+  <div id="wrapper">
+    <food-item-data v-for="x in foodObjs" :food-name="x.name" :food-desc="x.desc" :is-favorite="x.favorite"
+      :key="x.name"></food-item-data>
+    <button @click="removeItem">Remove Item</button>
+  </div>
+</template>
+
+<script>
 export default {
   data() {
     return {
       message: 'This is some text',
-      foods: ['Apel', 'Jengkol', 'Pete', 'Anggur', 'Kesemek', 'Juwet']
+      foods: ['Apel', 'Jengkol', 'Pete', 'Anggur', 'Kesemek', 'Juwet'],
+      foodObjs: [
+        {
+          name: 'Apples',
+          desc: 'Apples are a type of fruit that grow on trees.',
+          favorite: true
+        },
+        {
+          name: 'Pizza',
+          desc: 'Pizza has a bread base with tomato sauce, cheese, and toppings on top.',
+          favorite: false
+        },
+        {
+          name: 'Rice',
+          desc: 'Rice is a type of grain that people like to eat.',
+          favorite: false
+        },
+        {
+          name: 'Fish',
+          desc: 'Fish is an animal that lives in water.',
+          favorite: true
+        },
+        {
+          name: 'Cake',
+          desc: 'Cake is something sweet that tastes good.',
+          favorite: false
+        }
+      ]
+    }
+  },
+  methods: {
+    removeItem() {
+      this.foodObjs.splice(1, 1)
     }
   }
 }
