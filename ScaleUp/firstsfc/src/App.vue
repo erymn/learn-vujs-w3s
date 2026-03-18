@@ -19,9 +19,10 @@
   <br />
   <h2>Food</h2>
   <p>Food items are generated with v-for from the 'foods' array (use :key as unique id)</p>
+  <p>Add toggle-Favorite listener (message from child page)</p>
   <div id="wrapper">
     <food-item-data v-for="x in foodObjs" :food-name="x.name" :food-desc="x.desc" :is-favorite="x.favorite"
-      :key="x.name"></food-item-data>
+      :key="x.name" @toggle-Favorite="receiveEmit"></food-item-data>
     <button @click="removeItem">Remove Item</button>
   </div>
 </template>
@@ -64,6 +65,11 @@ export default {
   methods: {
     removeItem() {
       this.foodObjs.splice(1, 1)
+    },
+    receiveEmit(foodId) {
+      //alert('You clicked ' + foodId)
+      const foundFood = this.foodObjs.find(food => food.name === foodId);
+      foundFood.favorite = !foundFood.favorite;
     }
   }
 }
