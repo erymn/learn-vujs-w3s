@@ -12,6 +12,7 @@
 <script>
 export default {
     props: ['foodName', 'foodDesc', 'isFavorite'],
+    emits: ['toggle-Favorite'],      //documented $emit function
     data() {
         return {
             //foodIsFavorite: this.isFavorite
