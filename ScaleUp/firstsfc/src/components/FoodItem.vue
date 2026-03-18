@@ -9,59 +9,59 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return  {
-                //message: 'Aku seneng ' + this.foodName,
-                clicks: 0,
-                //1. Modify Props
-                foodIsFavorite: this.isFavorite
-            }
-        },
-        methods: {
-            countClicks() {
-                this.clicks++
-            },
-            //2. Modify Props
-            toggleFavorite() {
-                this.foodIsFavorite = !this.foodIsFavorite
-            }
-        },
-        //Props as Object
-        props: {
-            foodName: {
-                type: String,
-                required: true,
-                default: false
-            },
-            foodDesc: {
-                type: String,
-                required: false,
-                default: 'ini adalah pesan default dari props object',
-                validator: function(value) {
-                    if(20 < value.length && value.length < 40){
-                        return true
-                    }else{
-                        return false
-                    }
-                }
-            },
-            isFavorite: {
-                type: Boolean,
-                required: false,
-                default: false
-            }
+export default {
+    data() {
+        return {
+            //message: 'Aku seneng ' + this.foodName,
+            clicks: 0,
+            //1. Modify Props
+            foodIsFavorite: this.isFavorite
         }
-        // //Default PROPS
-        // props: [
-        //     'foodName','foodDesc','isFavorite'
-        // ]
+    },
+    methods: {
+        countClicks() {
+            this.clicks++
+        },
+        //2. Modify Props
+        toggleFavorite() {
+            this.foodIsFavorite = !this.foodIsFavorite
+        }
+    },
+    //Props as Object
+    props: {
+        foodName: {
+            type: String,
+            required: true,
+            default: false
+        },
+        foodDesc: {
+            type: String,
+            required: false,
+            default: 'ini adalah pesan default dari props object',
+            validator: function (value) {
+                if (20 < value.length && value.length < 40) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        },
+        isFavorite: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
     }
+    // //Default PROPS
+    // props: [
+    //     'foodName','foodDesc','isFavorite'
+    // ]
+}
 </script>
 
 <style>
-    #red {
-        font-weight: bold ;
-        color: rgb(144, 12, 12);
-    }
+#red {
+    font-weight: bold;
+    color: rgb(144, 12, 12);
+}
 </style>
