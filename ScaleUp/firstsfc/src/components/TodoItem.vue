@@ -1,5 +1,5 @@
 <template>
-    <li>{{ itemName }}</li>
+    <li style="margin: 5px 0">{{ itemName }}</li>
 </template>
 
 <script>
