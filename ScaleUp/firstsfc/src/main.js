@@ -5,6 +5,8 @@ import App2 from './App2.vue'
 import FoodItem from './components/FoodItem.vue'
 import FoodItemData from "./components/FoodItemData.vue";
 import TodoItem from "./components/TodoItem.vue";
+import CompOne from "./components/CompOne.vue";
+import CompTwo from "./components/CompTwo.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -13,6 +15,9 @@ import TodoItem from "./components/TodoItem.vue";
 
 const app2 = createApp(App2)
 app2.component('todo-item', TodoItem)
+app2.component('comp-one', CompOne)
+app2.component('comp-two', CompTwo)
+
 app2.mount('#app')
 
 //createApp(App).mount('#app')

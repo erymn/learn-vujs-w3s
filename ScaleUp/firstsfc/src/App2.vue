@@ -5,6 +5,14 @@
     </ul>
     <input v-model="newItem" />
     <button @click="addItem">Tambah</button>
+
+    <br />
+    <div style="background-color: transparent;">
+        <h3>Global Styling</h3>
+        <p>Tag p ini adalah milik 'App.vue'</p>
+        <comp-one />
+        <comp-two />
+    </div>
 </template>
 
 <script>
