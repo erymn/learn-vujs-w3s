@@ -15,7 +15,10 @@ import CompTwo from "./components/CompTwo.vue";
 
 const app2 = createApp(App2)
 app2.component('todo-item', TodoItem)
-app2.component('comp-one', CompOne)
+
+// removed from global component to local component in App.vue
+// app2.component('comp-one', CompOne)
+
 app2.component('comp-two', CompTwo)
 
 app2.mount('#app')

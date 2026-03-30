@@ -16,7 +16,14 @@
 </template>
 
 <script>
+// Import to make CompOne.vue local
+import CompOne from './components/CompOne.vue';
+
 export default {
+    components: {
+        // Manage local component
+        'comp-one': CompOne
+    },
     data() {
         return {
             newItem: '',
