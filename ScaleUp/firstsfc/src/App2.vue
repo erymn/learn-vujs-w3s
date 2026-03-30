@@ -13,6 +13,13 @@
         <comp-one />
         <comp-two />
     </div>
+
+    <br />
+    <div id="slot-section">
+        <h3>Slot in Vue</h3>
+        <p>Send 'Hello World' as content ke slot tag inside component</p>
+        <slot-comp>Hello World from Parent 'App2.vue'</slot-comp>
+    </div>
 </template>
 
 <script>
@@ -39,9 +46,20 @@ export default {
 }
 </script>
 <style>
+p {
+    width: 250px;
+}
+
 ul {
     width: 150px;
     list-style-type: none;
     padding-left: 10px;
+}
+
+#app .slot-section {
+    border: dashed black 1px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
 }
 </style>
