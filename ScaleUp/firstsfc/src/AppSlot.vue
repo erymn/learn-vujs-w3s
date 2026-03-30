@@ -9,15 +9,25 @@
     <h3>Slot in Card</h3>
     <p>We create card like div box from the food array</p>
     <div id="wrapper">
-        <slot-comp v-for="x in foods">
+        <slot-card v-for="x in foods">
             <img v-bind:src="x.url" />
             <h4>{{ x.name }}</h4>
             <p>{{ x.desc }}</p>
-        </slot-comp>
+        </slot-card>
     </div>
+
+    <br />
+    <h3>Slots Fallback Content</h3>
+    <p>A component without content provided can have fallback content in the slot tag.</p>
+    <slot-comp></slot-comp>
+    <slot-comp>
+        <p>Hello World from Parent 'App3.vue'</p>
+    </slot-comp>
 </template>
 
 <script>
+import SlotComp from './components/SlotComp.vue';
+
 export default {
     data() {
         return {
