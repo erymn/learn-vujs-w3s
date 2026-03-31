@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from './App.vue'
 import App2 from './App2.vue'
 import App3 from './AppSlot.vue'
+import App4 from "./App4.vue";
 
 import FoodItem from './components/FoodItem.vue'
 import FoodItemData from "./components/FoodItemData.vue";
@@ -10,6 +11,7 @@ import CompOne from "./components/CompOne.vue";
 import CompTwo from "./components/CompTwo.vue";
 import SlotComp from "./components/SlotComp.vue";
 import SlotCard from "./components/SlotCard.vue";
+import SlotName from "./components/SlotName.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -28,10 +30,15 @@ import SlotCard from "./components/SlotCard.vue";
 // app2.mount('#app')
 
 //// Handle Slot Application
-const app3 = createApp(App3)
-app3.component('slot-comp', SlotComp)
-app3.component('slot-card', SlotCard)
-app3.mount('#app')
+// const app3 = createApp(App3)
+// app3.component('slot-comp', SlotComp)
+// app3.component('slot-card', SlotCard)
+// app3.component('slot-name', SlotName)
+// app3.mount('#app')
+
+const app4 = createApp(App4)
+app4.component('slot-name', SlotName)
+app4.mount('#app')
 
 //createApp(App).mount('#app')
 
