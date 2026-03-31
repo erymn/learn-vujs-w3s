@@ -19,6 +19,12 @@
         </template>
         <p>this goes to default slot</p>
     </slot-name>
+
+    <h1>v-slot shorthand (using #)</h1>
+    <p>The shorthand for v-slot is <strong>'#'</strong></p>
+    <slot-name #bottomSlot>
+        'Hello!'
+    </slot-name>
 </template>
 
 <script></script>
