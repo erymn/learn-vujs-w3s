@@ -1,8 +1,9 @@
 <template>
     <h2>Component (Named Slot)</h2>
     <div>
-        <slot name="topSlot">
-        </slot>
+        <slot></slot>
+        <!-- <slot name="topSlot">
+        </slot> -->
     </div>
     <div>
         <slot name="bottomSlot">
