@@ -1,5 +1,5 @@
 <template>
-    <h6>Send data from component (ScopeSlot.vue) to App5.vue</h6>
+    <!--Send data from component (ScopeSlot.vue) to App5.vue-->
     <slot v-bind:lclData="Data"></slot>
 </template>
 <script>
