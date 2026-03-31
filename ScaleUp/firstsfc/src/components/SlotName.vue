@@ -13,12 +13,10 @@
 
 <style scoped>
 div {
-    height: 30px;
-    width: 50%;
+    width: 80%;
     border: dotted black 1px;
     margin: 10px;
     padding: 10px;
     background-color: lightgreen;
-    font-weight: bold;
 }
 </style>
