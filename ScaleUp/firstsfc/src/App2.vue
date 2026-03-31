@@ -5,10 +5,32 @@
     </ul>
     <input v-model="newItem" />
     <button @click="addItem">Tambah</button>
+
+    <br />
+    <div style="background-color: transparent;">
+        <h3>Global Styling</h3>
+        <p>Tag p ini adalah milik 'App.vue'</p>
+        <comp-one />
+        <comp-two />
+    </div>
+
+    <br />
+    <div id="slot-section">
+        <h3>Slot in Vue</h3>
+        <p>Send 'Hello World' as content ke slot tag inside component</p>
+        <slot-comp>Hello World from Parent 'App2.vue'</slot-comp>
+    </div>
 </template>
 
 <script>
+// Import to make CompOne.vue local
+import CompOne from './components/CompOne.vue';
+
 export default {
+    components: {
+        // Manage local component
+        'comp-one': CompOne
+    },
     data() {
         return {
             newItem: '',
@@ -24,9 +46,20 @@ export default {
 }
 </script>
 <style>
+p {
+    width: 250px;
+}
+
 ul {
     width: 150px;
     list-style-type: none;
     padding-left: 10px;
+}
+
+#app .slot-section {
+    border: dashed black 1px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
 }
 </style>
