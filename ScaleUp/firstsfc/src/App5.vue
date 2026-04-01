@@ -15,10 +15,15 @@
         <h2>{{ dataFromSlot.foodName }}<img :src=dataFromSlot.foodUrl></h2>
         <p class="greenP">{{ dataFromSlot.foodDesc }}</p>
     </scope-slot-array-object>
+
+    <!--Scope Slot Static Data-->
+    <scoped-slot-static-data v-slot="dataFromSlot">
+        <h5>{{ dataFromSlot.staticText }}</h5>
+        <p class="greenP">{{ dataFromSlot.dynamicText }}</p>
+    </scoped-slot-static-data>
 </template>
 
 <script>
-
 </script>
 
 <style>
@@ -27,6 +32,7 @@
 }
 
 h2,
+h5,
 .greenP {
     background-color: lightgreen;
     padding: 10px;

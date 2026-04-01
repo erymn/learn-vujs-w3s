@@ -17,6 +17,7 @@ import SlotName from "./components/SlotName.vue";
 import ScopeSlot from "./components/ScopeSlot.vue";
 import ScopeSlotArray from "./components/ScopeSlotArray.vue";
 import ScopeSlotArrayObject from "./components/ScopedSlotArrayObject.vue";
+import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -51,6 +52,7 @@ const app5 = createApp(App5)
 app5.component('scope-slot', ScopeSlot)
 app5.component('scope-slot-array', ScopeSlotArray)
 app5.component('scope-slot-array-object', ScopeSlotArrayObject)
+app5.component('scoped-slot-static-data', ScopedSlotStaticData)
 app5.mount('#app')
 //--------Scope Slot----------
 
