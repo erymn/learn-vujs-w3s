@@ -21,6 +21,28 @@
         <h5>{{ dataFromSlot.staticText }}</h5>
         <p class="greenP">{{ dataFromSlot.dynamicText }}</p>
     </scoped-slot-static-data>
+
+    <!--Scoped Slot Named-->
+    <h1>Named Scoped Slots</h1>
+    <p>Named scoped slots "leftSlot" and "rightSlot" send different data to App.vue from the SlotComp.vue component.
+    </p>
+    <hr>
+    <scoped-slot-named #leftSlot="leftProps">
+        <div class="app_div">{{ leftProps.text }}</div>
+    </scoped-slot-named>
+    <scoped-slot-named #rightSlot="rightProps">
+        <div class="app_div">{{ rightProps.text }}</div>
+    </scoped-slot-named>
+    <br />
+    <h8>Atau memakai mekanisme template tag</h8>
+    <scoped-slot-named>
+        <template v-slot:leftSlot="leftProps">
+            <div class="app_div">{{ leftProps.text }}</div>
+        </template>
+        <template v-slot:rightSlot="rightProps">
+            <div class="app_div">{{ rightProps.text }}</div>
+        </template>
+    </scoped-slot-named>
 </template>
 
 <script>
@@ -43,5 +65,13 @@ img {
     float: right;
     height: 70px;
     margin-left: 10px;
+}
+
+.app_div {
+    display: inline-block;
+    background-color: lightgreen;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
 }
 </style>
