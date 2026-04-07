@@ -20,6 +20,7 @@ import ScopeSlotArray from "./components/ScopeSlotArray.vue";
 import ScopeSlotArrayObject from "./components/ScopedSlotArrayObject.vue";
 import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
 import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
+import VueTeleport from "./components/VueTeleport.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -63,6 +64,7 @@ import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
 const app6 = createApp(App6)
 app6.component('comp-one', CompOne)
 app6.component('comp-two', CompTwo)
+app6.component("vue-teleport", VueTeleport)
 app6.mount('#app')
 //-------Dynamic Component-------
 

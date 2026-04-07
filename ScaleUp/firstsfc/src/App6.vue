@@ -8,8 +8,30 @@
     <KeepAlive :max="1">
         <component :is="activeComp"></component>
     </KeepAlive>
+
+    <br />
+    <h2>Teleport Component</h2>
+    <p>With &lt;teleport to="body"&gt; we move the red &lt;div&gt; from inside the component to the body tag.</p>
+    <vue-teleport></vue-teleport>
 </template>
 
+<style>
+#app {
+    width: 350px;
+    margin: 10px;
+}
+
+#app>div {
+    border: solid black 2px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(186, 228, 255);
+}
+
+h2 {
+    text-decoration: underline;
+}
+</style>
 <script>
 export default {
     data() {
