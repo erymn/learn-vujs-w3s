@@ -4,6 +4,7 @@ import App2 from './App2.vue'
 import App3 from './AppSlot.vue'
 import App4 from "./App4.vue";
 import App5 from "./App5.vue";
+import App6 from "./App6.vue";
 
 import FoodItem from './components/FoodItem.vue'
 import FoodItemData from "./components/FoodItemData.vue";
@@ -48,15 +49,22 @@ import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
 // app4.component('slot-name', SlotName)
 // app4.mount('#app')
 
-//--------Scope Slot----------
-const app5 = createApp(App5)
-app5.component('scope-slot', ScopeSlot)
-app5.component('scope-slot-array', ScopeSlotArray)
-app5.component('scope-slot-array-object', ScopeSlotArrayObject)
-app5.component('scoped-slot-static-data', ScopedSlotStaticData)
-app5.component('scoped-slot-named', ScopedSlotNamed)
-app5.mount('#app')
-//--------Scope Slot----------
+// //--------Scope Slot----------
+// const app5 = createApp(App5)
+// app5.component('scope-slot', ScopeSlot)
+// app5.component('scope-slot-array', ScopeSlotArray)
+// app5.component('scope-slot-array-object', ScopeSlotArrayObject)
+// app5.component('scoped-slot-static-data', ScopedSlotStaticData)
+// app5.component('scoped-slot-named', ScopedSlotNamed)
+// app5.mount('#app')
+// //--------Scope Slot----------
+
+//-------Dynamic Component-------
+const app6 = createApp(App6)
+app6.component('comp-one', CompOne)
+app6.component('comp-two', CompTwo)
+app6.mount('#app')
+//-------Dynamic Component-------
 
 
 //createApp(App).mount('#app')
