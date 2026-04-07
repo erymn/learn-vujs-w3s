@@ -1,10 +1,42 @@
 <template>
-    <p>Tag p ini milik 'CompOne.vue'</p>
+    <div>
+        <img :src="imgSrc">
+        <h2>Component One</h2>
+        <p>Choose food.</p>
+        <label>
+            <input type="radio" name="rbgFood" v-model="imgSrc" :value="'./src/assets/img_apple.svg'" />
+            Apple
+        </label>
+        <label>
+            <input type="radio" name="rbgFood" v-model="imgSrc" :value="'./src/assets/img_cake.svg'" />
+            Cake
+        </label>
+    </div>
 </template>
 
+<script>
+export default {
+    name: 'CompOne',
+    data() {
+        return {
+            imgSrc: './src/assets/img_question.svg'
+        }
+    }
+}
+</script>
+
 <style scoped>
-p {
-    background-color: lightcoral;
-    width: 150px;
+div {
+    background-color: lightgreen;
+}
+
+img {
+    float: right;
+    height: 100px;
+    margin-top: 20px;
+}
+
+label:hover {
+    cursor: pointer;
 }
 </style>
