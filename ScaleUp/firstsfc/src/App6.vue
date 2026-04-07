@@ -3,7 +3,8 @@
     <p>App.vue switches between which component to show.</p>
     <button @click="toggleValue = !toggleValue">Switch component</button>
     <!--Digunakan untuk simpan state ketika terjadi perpindahan komponen-->
-    <KeepAlive exclude="CompTwo" include="CompOne">
+    <!-- <KeepAlive exclude="CompTwo" include="CompOne"> -->
+    <KeepAlive include="CompOne,CompTwo">
         <component :is="activeComp"></component>
     </KeepAlive>
 </template>
