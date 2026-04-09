@@ -14,6 +14,12 @@
         <p>Get Data from API</p>
         <from-api-random />
     </div>
+
+    <br />
+    <div>
+        <p>Get Data from API (Axios)</p>
+        <using-axios-lib />
+    </div>
 </template>
 
 <script>
