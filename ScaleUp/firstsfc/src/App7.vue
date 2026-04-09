@@ -14,8 +14,8 @@ export default {
     },
     methods: {
         async fetchData() {
-            const response = await fetch("./src/assets/file.txt")
-            this.data = await response.text();
+            const response = await fetch("/src/assets/bigLandMammals.json")
+            this.data = await response.json();
         }
     }
 }
