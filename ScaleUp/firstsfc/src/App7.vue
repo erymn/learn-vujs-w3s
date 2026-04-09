@@ -8,6 +8,12 @@
             <p>Max Weight: {{ randomMammal.maxWeight }} kg</p>
         </div>
     </div>
+
+    <br />
+    <div>
+        <p>Get Data from API</p>
+        <from-api-random />
+    </div>
 </template>
 
 <script>

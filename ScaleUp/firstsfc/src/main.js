@@ -22,6 +22,7 @@ import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
 import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
 import VueTeleport from "./components/VueTeleport.vue";
 import App7 from "./App7.vue";
+import FromApiRandom from "./components/httpcomp/FromApiRandom.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -69,9 +70,11 @@ import App7 from "./App7.vue";
 // app6.mount('#app')
 // //-------Dynamic Component-------
 
+//-----------HTTP Request--------------
 const app7 = createApp(App7)
+app7.component('from-api-random', FromApiRandom)
 app7.mount('#app')
-
+//-----------HTTP Request--------------
 
 //createApp(App).mount('#app')
 
