@@ -1,7 +1,12 @@
 <template>
     <div>
+        <p>Try clicking the button more than once to see new animals picked randomly.</p>
         <button @click="fetchData">Fetch Data</button>
-        <p v-if="data">{{ data }}</p>
+        <div v-if="randomMammal">
+            <h2>{{ randomMammal.name }}</h2>
+            <h4>Is Carnivour: {{ randomMammal.carnivore ? "Yes" : "No" }}</h4>
+            <p>Max Weight: {{ randomMammal.maxWeight }} kg</p>
+        </div>
     </div>
 </template>
 
@@ -9,13 +14,17 @@
 export default {
     data() {
         return {
-            data: null
+            //data: null
+            randomMammal: null
         };
     },
     methods: {
         async fetchData() {
             const response = await fetch("/src/assets/bigLandMammals.json")
-            this.data = await response.json();
+            const data = await response.json();
+
+            const randIndex = Math.floor(Math.random() * data.results.length)
+            this.randomMammal = data.results[randIndex]
         }
     }
 }
