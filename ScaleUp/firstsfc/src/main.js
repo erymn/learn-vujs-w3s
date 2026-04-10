@@ -22,6 +22,16 @@ import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
 import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
 import VueTeleport from "./components/VueTeleport.vue";
 
+import App7 from "./App7.vue";
+import FromApiRandom from "./components/httpcomp/FromApiRandom.vue";
+import UsingAxiosLib from "./components/httpcomp/UsingAxiosLib.vue";
+
+import App8 from "./App8.vue";
+import refsample01 from "./components/refattr/refsample01.vue";
+import refsample02 from "./components/refattr/refsample02.vue";
+import RefInput from "./components/refattr/refInput.vue";
+import refWithvfor from "./components/refattr/refWithvfor.vue";
+
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
 // app.component('food-item-data', FoodItemData)
@@ -60,14 +70,29 @@ import VueTeleport from "./components/VueTeleport.vue";
 // app5.mount('#app')
 // //--------Scope Slot----------
 
-//-------Dynamic Component-------
-const app6 = createApp(App6)
-app6.component('comp-one', CompOne)
-app6.component('comp-two', CompTwo)
-app6.component("vue-teleport", VueTeleport)
-app6.mount('#app')
-//-------Dynamic Component-------
+// //-------Dynamic Component-------
+// const app6 = createApp(App6)
+// app6.component('comp-one', CompOne)
+// app6.component('comp-two', CompTwo)
+// app6.component("vue-teleport", VueTeleport)
+// app6.mount('#app')
+// //-------Dynamic Component-------
 
+// //-----------HTTP Request--------------
+// const app7 = createApp(App7)
+// app7.component('from-api-random', FromApiRandom)
+// app7.component('using-axios-lib', UsingAxiosLib)
+// app7.mount('#app')
+// //-----------HTTP Request--------------
+
+//--------Ref Attributes---------
+const app8 = createApp(App8)
+app8.component('ref-sample-01', refsample01)
+app8.component('ref-sample-02', refsample02)
+app8.component('ref-input', RefInput)
+app8.component('ref-with-vfor', refWithvfor)
+app8.mount('#app')
+//--------Ref Attributes---------
 
 //createApp(App).mount('#app')
 
