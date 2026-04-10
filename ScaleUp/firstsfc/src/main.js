@@ -21,9 +21,13 @@ import ScopeSlotArrayObject from "./components/ScopedSlotArrayObject.vue";
 import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
 import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
 import VueTeleport from "./components/VueTeleport.vue";
+
 import App7 from "./App7.vue";
 import FromApiRandom from "./components/httpcomp/FromApiRandom.vue";
 import UsingAxiosLib from "./components/httpcomp/UsingAxiosLib.vue";
+
+import App8 from "./App8.vue";
+import refsample01 from "./components/refattr/refsample01.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -71,12 +75,18 @@ import UsingAxiosLib from "./components/httpcomp/UsingAxiosLib.vue";
 // app6.mount('#app')
 // //-------Dynamic Component-------
 
-//-----------HTTP Request--------------
-const app7 = createApp(App7)
-app7.component('from-api-random', FromApiRandom)
-app7.component('using-axios-lib', UsingAxiosLib)
-app7.mount('#app')
-//-----------HTTP Request--------------
+// //-----------HTTP Request--------------
+// const app7 = createApp(App7)
+// app7.component('from-api-random', FromApiRandom)
+// app7.component('using-axios-lib', UsingAxiosLib)
+// app7.mount('#app')
+// //-----------HTTP Request--------------
+
+//--------Ref Attributes---------
+const app8 = createApp(App8)
+app8.component('ref-sample-01', refsample01)
+app8.mount('#app')
+//--------Ref Attributes---------
 
 //createApp(App).mount('#app')
 
