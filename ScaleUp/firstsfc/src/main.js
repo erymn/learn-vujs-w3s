@@ -28,6 +28,7 @@ import UsingAxiosLib from "./components/httpcomp/UsingAxiosLib.vue";
 
 import App8 from "./App8.vue";
 import refsample01 from "./components/refattr/refsample01.vue";
+import refsample02 from "./components/refattr/refsample02.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -85,6 +86,7 @@ import refsample01 from "./components/refattr/refsample01.vue";
 //--------Ref Attributes---------
 const app8 = createApp(App8)
 app8.component('ref-sample-01', refsample01)
+app8.component('ref-sample-02', refsample02)
 app8.mount('#app')
 //--------Ref Attributes---------
 
