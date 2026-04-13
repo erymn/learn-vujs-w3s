@@ -54,6 +54,17 @@
     <div>
         <befupd-comp-one v-if="activeComp"></befupd-comp-one>
     </div>
+
+    <hr />
+    <h4>The 'errorCaptured' Lifecycle Hook</h4>
+    <p>Whenever there is an error in a child component, the errorCaptured() function is called on the parent.</p>
+    <p>When the button inside the component is clicked, a method will run that tries to do changes to a $refs object
+        that does not exist. This creates an error in the component that triggers the 'errorCaptured' lifecycle hook in
+        the parent, and an alert box is displayed with information about the error.</p>
+    <p>After clicking "Ok" in the alert box you can see the error in the browser console.</p>
+    <div>
+        <errcapture-comp-one></errcapture-comp-one>
+    </div>
 </template>
 
 <script>
@@ -62,6 +73,14 @@ export default {
         return {
             activeComp: true
         }
+    },
+    // errorCaptured() {
+    //     alert("An error occurred");
+    // },
+    errorCaptured(error, compInst, errorInfo) {
+        console.log("error: ", error);
+        console.log("compInst: ", compInst);
+        console.log("errorInfo: ", errorInfo);
     }
 }
 </script>
