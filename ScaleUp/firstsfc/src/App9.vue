@@ -75,6 +75,21 @@
     <div>
         <ren-track-triggered-com-one></ren-track-triggered-com-one>
     </div>
+
+    <hr />
+    <h4>The 'activated' and 'deactivated' Hooks</h4>
+    <p>The 'activated' and 'deactivated' hooks are only called when a component is cached using the 'keep-alive'
+        element.
+    </p>
+    <p>The 'mounted' hook is called when the component is first created, but the 'activated' hook is not called until
+        the component is displayed again after being hidden.</p>
+    <p>The 'deactivated' hook is called when the component is hidden.</p>
+    <button @click="this.activeComp = !this.activeComp">Include component</button>
+    <div>
+        <KeepAlive>
+            <activate-deactivate-comp-one v-if="activeComp"></activate-deactivate-comp-one>
+        </KeepAlive>
+    </div>
 </template>
 
 <script>

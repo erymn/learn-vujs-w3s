@@ -41,6 +41,7 @@ import MouCompOne041 from "./components/vuehooks/MouCompOne041.vue";
 import BefUpdCompOne05 from "./components/vuehooks/BefUpdCompOne05.vue";
 import ErrCaptureCompOneX01 from "./components/vuehooks/ErrCaptureCompOneX01.vue";
 import RenTrackTriggeredComOneDevMode from "./components/vuehooks/RenTrackTriggeredComOneDevMode.vue";
+import ActivateDeactivateCompOne06 from "./components/vuehooks/ActivateDeactivateCompOne06.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -114,6 +115,7 @@ const app9 = createApp(App9)
 // app9.component('befupd-comp-one', BefUpdCompOne05)
 app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
 app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
+app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
 app9.mount('#app')
 //-----------Vue Hooks---------------
 
