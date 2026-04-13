@@ -17,6 +17,23 @@
     <div>
         <cre-comp-one v-if="activeComp"></cre-comp-one>
     </div>
+
+    <hr />
+    <h4>The 'beforeMount' Lifecycle Hook</h4>
+    <p>We can see the console.log() message from the 'beforeMount' lifecycle hook, but the text change we try to do to
+        the 'pEl' paragraph DOM element does not work, because the 'pEl' paragraph DOM element does not exist yet at
+        this stage.</p>
+    <button @click="this.activeComp = !this.activeComp">Add/Remove Component</button>
+    <div>
+        <!-- <befmou-comp-one v-if="activeComp"></befmou-comp-one> -->
+    </div>
+
+    <hr />
+    <h4>The 'mounted' Lifecycle Hook</h4>
+    <button @click="this.activeComp = !this.activeComp">Add/Remove Component</button>
+    <div>
+        <mou-comp-one v-if="activeComp"></mou-comp-one>
+    </div>
 </template>
 
 <script>
