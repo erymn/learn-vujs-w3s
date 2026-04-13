@@ -32,6 +32,18 @@ import refsample02 from "./components/refattr/refsample02.vue";
 import RefInput from "./components/refattr/refInput.vue";
 import refWithvfor from "./components/refattr/refWithvfor.vue";
 
+import App9 from "./App9.vue";
+import BefCreCompOne01 from "./components/vuehooks/BefCreCompOne01.vue";
+import CreCompOne02 from "./components/vuehooks/CreCompOne02.vue";
+import BefMouCompOne03 from "./components/vuehooks/BefMouCompOne03.vue";
+import MouCompOne04 from "./components/vuehooks/MouCompOne04.vue";
+import MouCompOne041 from "./components/vuehooks/MouCompOne041.vue";
+import BefUpdCompOne05 from "./components/vuehooks/BefUpdCompOne05.vue";
+import ErrCaptureCompOneX01 from "./components/vuehooks/ErrCaptureCompOneX01.vue";
+import RenTrackTriggeredComOneDevMode from "./components/vuehooks/RenTrackTriggeredComOneDevMode.vue";
+import ActivateDeactivateCompOne06 from "./components/vuehooks/ActivateDeactivateCompOne06.vue";
+import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
+
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
 // app.component('food-item-data', FoodItemData)
@@ -85,14 +97,29 @@ import refWithvfor from "./components/refattr/refWithvfor.vue";
 // app7.mount('#app')
 // //-----------HTTP Request--------------
 
-//--------Ref Attributes---------
-const app8 = createApp(App8)
-app8.component('ref-sample-01', refsample01)
-app8.component('ref-sample-02', refsample02)
-app8.component('ref-input', RefInput)
-app8.component('ref-with-vfor', refWithvfor)
-app8.mount('#app')
-//--------Ref Attributes---------
+// //--------Ref Attributes---------
+// const app8 = createApp(App8)
+// app8.component('ref-sample-01', refsample01)
+// app8.component('ref-sample-02', refsample02)
+// app8.component('ref-input', RefInput)
+// app8.component('ref-with-vfor', refWithvfor)
+// app8.mount('#app')
+// //--------Ref Attributes---------
+
+//-----------Vue Hooks---------------
+const app9 = createApp(App9)
+// app9.component('befcre-comp-one', BefCreCompOne01)
+// app9.component('cre-comp-one', CreCompOne02)
+// app9.component('befmou-comp-one', BefMouCompOne03)
+// app9.component('mou-comp-one', MouCompOne04)
+// app9.component('mou-comp-one-041', MouCompOne041)
+// app9.component('befupd-comp-one', BefUpdCompOne05)
+app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
+app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
+app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
+app9.component('joining-hook-at-vue', JoiningHookAtVue)
+app9.mount('#app')
+//-----------Vue Hooks---------------
 
 //createApp(App).mount('#app')
 
