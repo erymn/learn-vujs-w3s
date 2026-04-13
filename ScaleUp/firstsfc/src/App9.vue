@@ -43,6 +43,17 @@
     <div>
         <mou-comp-one-041 v-if="activeComp"></mou-comp-one-041>
     </div>
+
+    <hr />
+    <h4>The 'beforeUpdate' Lifecycle Hook</h4>
+    <p>Whenever there is a change in our page, the application is 'updated' and the 'beforeUpdate' hook happens just
+        before that.</p>
+    <p>It is safe to modify our page in the 'beforeUpdate' hook like we do here, but if we modify our page in the
+        'updated' hook, we will generate an infinite loop.</p>
+    <button @click="this.activeComp = !this.activeComp">Add/Remove Component</button>
+    <div>
+        <befupd-comp-one v-if="activeComp"></befupd-comp-one>
+    </div>
 </template>
 
 <script>
