@@ -37,6 +37,7 @@ import BefCreCompOne01 from "./components/vuehooks/BefCreCompOne01.vue";
 import CreCompOne02 from "./components/vuehooks/CreCompOne02.vue";
 import BefMouCompOne03 from "./components/vuehooks/BefMouCompOne03.vue";
 import MouCompOne04 from "./components/vuehooks/MouCompOne04.vue";
+import MouCompOne041 from "./components/vuehooks/MouCompOne041.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -106,6 +107,7 @@ app9.component('befcre-comp-one', BefCreCompOne01)
 app9.component('cre-comp-one', CreCompOne02)
 app9.component('befmou-comp-one', BefMouCompOne03)
 app9.component('mou-comp-one', MouCompOne04)
+app9.component('mou-comp-one-041', MouCompOne041)
 app9.mount('#app')
 //-----------Vue Hooks---------------
 

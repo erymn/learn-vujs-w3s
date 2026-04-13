@@ -34,6 +34,15 @@
     <div>
         <mou-comp-one v-if="activeComp"></mou-comp-one>
     </div>
+
+    <hr />
+    <h4>The 'mounted' Lifecycle Hook</h4>
+    <p>Below is an example that is perhaps more useful: To put the cursor inside the input field after the form
+        component is mounted, so the user can just start typing.</p>
+    <button @click="this.activeComp = !this.activeComp">Add/Remove Component</button>
+    <div>
+        <mou-comp-one-041 v-if="activeComp"></mou-comp-one-041>
+    </div>
 </template>
 
 <script>
