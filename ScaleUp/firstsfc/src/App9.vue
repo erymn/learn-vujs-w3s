@@ -90,6 +90,18 @@
             <activate-deactivate-comp-one v-if="activeComp"></activate-deactivate-comp-one>
         </KeepAlive>
     </div>
+
+    <hr />
+    <h4>Joining Hooks at Vue (activated, deactivated, mount and unmounted)</h4>
+    <p>Below is a log with every time the 'activated', 'deactivated', 'mounted' or 'unmounted' hooks run.</p>
+    <ol ref="olEl"></ol>
+    <p>You can also see when these hooks run in the console.</p>
+    <button @click="this.activeComp = !this.activeComp">Include component</button>
+    <div>
+        <KeepAlive>
+            <joining-hook-at-vue v-if="activeComp"></joining-hook-at-vue>
+        </KeepAlive>
+    </div>
 </template>
 
 <script>
