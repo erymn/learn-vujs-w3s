@@ -8,6 +8,15 @@
     <div>
         <befcre-comp-one v-if="activeComp"></befcre-comp-one>
     </div>
+
+    <hr />
+    <h4>The 'created' Lifecycle Hook</h4>
+    <p>We can see the console.log() message from 'created' lifecycle hook, and the text change we try to do to the Vue
+        data property has an effect, because the Vue data property is created at this stage.</p>
+    <button @click="this.activeComp = !this.activeComp">Add/Remove Component</button>
+    <div>
+        <cre-comp-one v-if="activeComp"></cre-comp-one>
+    </div>
 </template>
 
 <script>
