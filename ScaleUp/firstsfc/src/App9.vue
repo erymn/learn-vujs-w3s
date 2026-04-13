@@ -65,6 +65,16 @@
     <div>
         <errcapture-comp-one></errcapture-comp-one>
     </div>
+
+    <hr />
+    <h4>The 'renderTracked' and 'renderTriggered' Hooks</h4>
+    <p>The 'renderTracked' and 'renderTriggered' hooks are meant to be used in debugging, and are only available in
+        development mode.</p>
+    <p><mark>This example only works in development mode, so to see the hooks run, you must copy this code and run it on
+            you own computer in development mode.</mark></p>
+    <div>
+        <ren-track-triggered-com-one></ren-track-triggered-com-one>
+    </div>
 </template>
 
 <script>
