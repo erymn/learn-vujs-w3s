@@ -1,4 +1,6 @@
 import { createApp } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
+
 import App from './App.vue'
 import App2 from './App2.vue'
 import App3 from './AppSlot.vue'
@@ -45,8 +47,11 @@ import ActivateDeactivateCompOne06 from "./components/vuehooks/ActivateDeactivat
 import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
 
 import App10 from "./App10.vue";
+
+import App11 from "./App11.vue";
 import FoodKinds from "./components/provideinject/FoodKinds.vue";
 import FoodAbout from "./components/provideinject/FoodAbout.vue";
+import Animal from "./components/routingpage/animalcollection.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -125,12 +130,12 @@ import FoodAbout from "./components/provideinject/FoodAbout.vue";
 // app9.mount('#app')
 // //-----------Vue Hooks---------------
 
-//-------------Vue Provide/Inject-----------------
-const app10 = createApp(App10)
-app10.component('food-kinds', FoodKinds)
-app10.component('food-about', FoodAbout)
-app10.mount('#app')
-//-------------Vue Provide/Inject-----------------
+// //-------------Vue Provide/Inject-----------------
+// const app10 = createApp(App10)
+// app10.component('food-kinds', FoodKinds)
+// app10.component('food-about', FoodAbout)
+// app10.mount('#app')
+// //-------------Vue Provide/Inject-----------------
 
 //createApp(App).mount('#app')
 
@@ -140,3 +145,30 @@ app10.mount('#app')
 // import App from './App.vue'
 
 // createApp(App).mount('#app')
+
+//-----------Using Vue Router-----------
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/foodkinds',
+            name: 'Food Kinds',
+            component: FoodKinds
+        },
+        {
+            path: '/foodabout',
+            name: 'About Food',
+            component: FoodAbout
+        },
+        {
+            path: '/animal',
+            name: 'Animal',
+            component: Animal
+        }
+    ]
+})
+
+const app11 = createApp(App11)
+app11.use(router)
+app11.mount('#app')
+//-----------Using Vue Router-----------
