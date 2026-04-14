@@ -1,4 +1,6 @@
 import { createApp } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
+
 import App from './App.vue'
 import App2 from './App2.vue'
 import App3 from './AppSlot.vue'
@@ -43,6 +45,13 @@ import ErrCaptureCompOneX01 from "./components/vuehooks/ErrCaptureCompOneX01.vue
 import RenTrackTriggeredComOneDevMode from "./components/vuehooks/RenTrackTriggeredComOneDevMode.vue";
 import ActivateDeactivateCompOne06 from "./components/vuehooks/ActivateDeactivateCompOne06.vue";
 import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
+
+import App10 from "./App10.vue";
+
+import App11 from "./App11.vue";
+import FoodKinds from "./components/provideinject/FoodKinds.vue";
+import FoodAbout from "./components/provideinject/FoodAbout.vue";
+import Animal from "./components/routingpage/animalcollection.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -106,20 +115,27 @@ import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
 // app8.mount('#app')
 // //--------Ref Attributes---------
 
-//-----------Vue Hooks---------------
-const app9 = createApp(App9)
-// app9.component('befcre-comp-one', BefCreCompOne01)
-// app9.component('cre-comp-one', CreCompOne02)
-// app9.component('befmou-comp-one', BefMouCompOne03)
-// app9.component('mou-comp-one', MouCompOne04)
-// app9.component('mou-comp-one-041', MouCompOne041)
-// app9.component('befupd-comp-one', BefUpdCompOne05)
-app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
-app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
-app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
-app9.component('joining-hook-at-vue', JoiningHookAtVue)
-app9.mount('#app')
-//-----------Vue Hooks---------------
+// //-----------Vue Hooks---------------
+// const app9 = createApp(App9)
+// // app9.component('befcre-comp-one', BefCreCompOne01)
+// // app9.component('cre-comp-one', CreCompOne02)
+// // app9.component('befmou-comp-one', BefMouCompOne03)
+// // app9.component('mou-comp-one', MouCompOne04)
+// // app9.component('mou-comp-one-041', MouCompOne041)
+// // app9.component('befupd-comp-one', BefUpdCompOne05)
+// app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
+// app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
+// app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
+// app9.component('joining-hook-at-vue', JoiningHookAtVue)
+// app9.mount('#app')
+// //-----------Vue Hooks---------------
+
+// //-------------Vue Provide/Inject-----------------
+// const app10 = createApp(App10)
+// app10.component('food-kinds', FoodKinds)
+// app10.component('food-about', FoodAbout)
+// app10.mount('#app')
+// //-------------Vue Provide/Inject-----------------
 
 //createApp(App).mount('#app')
 
@@ -129,3 +145,30 @@ app9.mount('#app')
 // import App from './App.vue'
 
 // createApp(App).mount('#app')
+
+//-----------Using Vue Router-----------
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/foodkinds',
+            name: 'Food Kinds',
+            component: FoodKinds
+        },
+        {
+            path: '/foodabout',
+            name: 'About Food',
+            component: FoodAbout
+        },
+        {
+            path: '/animal',
+            name: 'Animal',
+            component: Animal
+        }
+    ]
+})
+
+const app11 = createApp(App11)
+app11.use(router)
+app11.mount('#app')
+//-----------Using Vue Router-----------
