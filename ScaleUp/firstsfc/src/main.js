@@ -44,6 +44,10 @@ import RenTrackTriggeredComOneDevMode from "./components/vuehooks/RenTrackTrigge
 import ActivateDeactivateCompOne06 from "./components/vuehooks/ActivateDeactivateCompOne06.vue";
 import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
 
+import App10 from "./App10.vue";
+import FoodKinds from "./components/provideinject/FoodKinds.vue";
+import FoodAbout from "./components/provideinject/FoodAbout.vue";
+
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
 // app.component('food-item-data', FoodItemData)
@@ -106,20 +110,27 @@ import JoiningHookAtVue from "./components/vuehooks/JoiningHookAtVue.vue";
 // app8.mount('#app')
 // //--------Ref Attributes---------
 
-//-----------Vue Hooks---------------
-const app9 = createApp(App9)
-// app9.component('befcre-comp-one', BefCreCompOne01)
-// app9.component('cre-comp-one', CreCompOne02)
-// app9.component('befmou-comp-one', BefMouCompOne03)
-// app9.component('mou-comp-one', MouCompOne04)
-// app9.component('mou-comp-one-041', MouCompOne041)
-// app9.component('befupd-comp-one', BefUpdCompOne05)
-app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
-app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
-app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
-app9.component('joining-hook-at-vue', JoiningHookAtVue)
-app9.mount('#app')
-//-----------Vue Hooks---------------
+// //-----------Vue Hooks---------------
+// const app9 = createApp(App9)
+// // app9.component('befcre-comp-one', BefCreCompOne01)
+// // app9.component('cre-comp-one', CreCompOne02)
+// // app9.component('befmou-comp-one', BefMouCompOne03)
+// // app9.component('mou-comp-one', MouCompOne04)
+// // app9.component('mou-comp-one-041', MouCompOne041)
+// // app9.component('befupd-comp-one', BefUpdCompOne05)
+// app9.component('errcapture-comp-one', ErrCaptureCompOneX01)
+// app9.component('ren-track-triggered-com-one', RenTrackTriggeredComOneDevMode)
+// app9.component('activate-deactivate-comp-one', ActivateDeactivateCompOne06)
+// app9.component('joining-hook-at-vue', JoiningHookAtVue)
+// app9.mount('#app')
+// //-----------Vue Hooks---------------
+
+//-------------Vue Provide/Inject-----------------
+const app10 = createApp(App10)
+app10.component('food-kinds', FoodKinds)
+app10.component('food-about', FoodAbout)
+app10.mount('#app')
+//-------------Vue Provide/Inject-----------------
 
 //createApp(App).mount('#app')
 
