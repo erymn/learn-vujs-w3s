@@ -2,7 +2,7 @@
     <div>
         <h2>
             {{ foodName }}
-            <img src="../assets/img_quality.svg" v-show="isFavorite">
+            <img src="../../assets/img_quality.svg" v-show="isFavorite">
         </h2>
         <p2>{{ foodDesc }}</p2>
         <button v-on:click="toggleFavorite">Is Favorite?</button>
