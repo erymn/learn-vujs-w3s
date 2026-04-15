@@ -61,6 +61,7 @@ import SampleCssAnimation from "./components/vueanimation/SampleCssAnimation.vue
 import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
 import TheTransitionComp from "./components/vueanimation/TheTransitionComp.vue";
 import TransitionNameProp from "./components/vueanimation/TransitionNameProp.vue";
+import JsTransitionHook from "./components/vueanimation/JsTransitionHook.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -221,11 +222,11 @@ const router = createRouter({
             name: 'Transition Name Prop',
             component: TransitionNameProp
         },
-        // {
-        //     path: '/varform',
-        //     name: 'Various Form',
-        //     component: VariousFormInput
-        // },
+        {
+            path: '/jstranshook',
+            name: 'Js Transition Hooks',
+            component: JsTransitionHook
+        },
         // {
         //     path: '/colorform',
         //     name: 'Color Form',
