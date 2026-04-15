@@ -56,6 +56,10 @@ import ReadOnlyFormInput from "./components/forminputadv/ReadOnlyFormInput.vue";
 import VariousFormInput from "./components/forminputadv/VariousFormInput.vue";
 import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 
+import App12 from "./App12.vue"
+import SampleCssAnimation from "./components/vueanimation/SampleCssAnimation.vue";  
+import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
+
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
 // app.component('food-item-data', FoodItemData)
@@ -149,44 +153,86 @@ import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 
 // createApp(App).mount('#app')
 
-//-----------Using Vue Router-----------
+// //-----------Using Vue Router-----------
+// const router = createRouter({
+//     history: createWebHistory(),
+//     routes: [
+//         {
+//             path: '/foodkinds',
+//             name: 'Food Kinds',
+//             component: FoodKinds
+//         },
+//         {
+//             path: '/foodabout',
+//             name: 'About Food',
+//             component: FoodAbout
+//         },
+//         {
+//             path: '/animal',
+//             name: 'Animal',
+//             component: Animal
+//         },
+//         {
+//             path: '/roform',
+//             name: 'ReadOnly Form',
+//             component: ReadOnlyFormInput
+//         },
+//         {
+//             path: '/varform',
+//             name: 'Various Form',
+//             component: VariousFormInput
+//         },
+//         {
+//             path: '/colorform',
+//             name: 'Color Form',
+//             component: ColorFormInput
+//         }
+//     ]
+// })
+
+// const app11 = createApp(App11)
+// app11.use(router)
+// app11.mount('#app')
+// //-----------Using Vue Router-----------
+
+// //-----------Vue Animation-----------
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/foodkinds',
-            name: 'Food Kinds',
-            component: FoodKinds
+            path: '/sampleanim',
+            name: 'Sample CSS Animation',
+            component: SampleCssAnimation
         },
         {
-            path: '/foodabout',
-            name: 'About Food',
-            component: FoodAbout
+            path: '/basiccssanim',
+            name: 'Basic CSS Animation',
+            component: BasicCssAnimation
         },
-        {
-            path: '/animal',
-            name: 'Animal',
-            component: Animal
-        },
-        {
-            path: '/roform',
-            name: 'ReadOnly Form',
-            component: ReadOnlyFormInput
-        },
-        {
-            path: '/varform',
-            name: 'Various Form',
-            component: VariousFormInput
-        },
-        {
-            path: '/colorform',
-            name: 'Color Form',
-            component: ColorFormInput
-        }
+        // {
+        //     path: '/animal',
+        //     name: 'Animal',
+        //     component: Animal
+        // },
+        // {
+        //     path: '/roform',
+        //     name: 'ReadOnly Form',
+        //     component: ReadOnlyFormInput
+        // },
+        // {
+        //     path: '/varform',
+        //     name: 'Various Form',
+        //     component: VariousFormInput
+        // },
+        // {
+        //     path: '/colorform',
+        //     name: 'Color Form',
+        //     component: ColorFormInput
+        // }
     ]
 })
 
-const app11 = createApp(App11)
-app11.use(router)
-app11.mount('#app')
-//-----------Using Vue Router-----------
+const app12 = createApp(App12)
+app12.use(router)
+app12.mount('#app')
+// //-----------Vue Animation-----------
