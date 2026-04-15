@@ -66,6 +66,8 @@ import TheAppearPop from "./components/vueanimation/TheAppearPop.vue";
 import TransBetweenElem from "./components/vueanimation/TransBetweenElem.vue";
 import InOutModeTransition from "./components/vueanimation/InOutModeTransition.vue";
 import DynamicCompTransition from "./components/vueanimation/DynamicCompTransition.vue";
+import TransitionGroupComp from "./components/vueanimation/TransitionGroupComp.vue";
+import AddRemoveWithVMove from "./components/vueanimation/AddRemoveWithVMove.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -250,6 +252,16 @@ const router = createRouter({
             path: '/dynamiccomp',
             name: 'Dynamic Comp',
             component: DynamicCompTransition
+        },
+        {
+            path: '/transitiongroup',
+            name: 'Transition Group',
+            component: TransitionGroupComp
+        },
+        {
+            path: '/addremovewithvmove',
+            name: 'Add Remove With VMove',
+            component: AddRemoveWithVMove
         }
     ]
 })

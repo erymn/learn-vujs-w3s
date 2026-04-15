@@ -8,7 +8,9 @@
     <router-link to="/appearpop">The Appear Pop</router-link>&nbsp;
     <router-link to="/transbetweenelem">Transition Between Elements</router-link>&nbsp;
     <router-link to="/inoutmode">In Out Mode</router-link>&nbsp;
-    <router-link to="/dynamiccomp">Dynamic Comp</router-link>
+    <router-link to="/dynamiccomp">Dynamic Comp</router-link>&nbsp;
+    <router-link to="/transitiongroup">Transition Group</router-link>&nbsp;
+    <router-link to="/addremovewithvmove">Add Remove With VMove</router-link>
     <div>
         <router-view></router-view>
     </div>
