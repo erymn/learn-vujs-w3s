@@ -68,6 +68,7 @@ import InOutModeTransition from "./components/vueanimation/InOutModeTransition.v
 import DynamicCompTransition from "./components/vueanimation/DynamicCompTransition.vue";
 import TransitionGroupComp from "./components/vueanimation/TransitionGroupComp.vue";
 import AddRemoveWithVMove from "./components/vueanimation/AddRemoveWithVMove.vue";
+import LargerExamples from "./components/vueanimation/LargerExamples.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -262,6 +263,11 @@ const router = createRouter({
             path: '/addremovewithvmove',
             name: 'Add Remove With VMove',
             component: AddRemoveWithVMove
+        },
+        {
+            path: '/larger',
+            name: 'Larger Examples',
+            component: LargerExamples
         }
     ]
 })
