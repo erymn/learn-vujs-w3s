@@ -60,6 +60,7 @@ import App12 from "./App12.vue"
 import SampleCssAnimation from "./components/vueanimation/SampleCssAnimation.vue";  
 import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
 import TheTransitionComp from "./components/vueanimation/TheTransitionComp.vue";
+import TransitionNameProp from "./components/vueanimation/TransitionNameProp.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -215,11 +216,11 @@ const router = createRouter({
             name: 'Transition Comp',
             component: TheTransitionComp
         },
-        // {
-        //     path: '/roform',
-        //     name: 'ReadOnly Form',
-        //     component: ReadOnlyFormInput
-        // },
+        {
+            path: '/transitionnameprop',
+            name: 'Transition Name Prop',
+            component: TransitionNameProp
+        },
         // {
         //     path: '/varform',
         //     name: 'Various Form',
