@@ -1,8 +1,11 @@
 <template>
     <p>Choose what part of this page want to see</p>
-    <router-link to="/foodkinds">Food Kinds</router-link>&nbsp;&nbsp;&nbsp;
-    <router-link to="/foodabout">Food About</router-link>&nbsp;&nbsp;&nbsp;
+    <router-link to="/foodkinds">Food Kinds</router-link>
+    <router-link to="/foodabout">Food About</router-link>
     <router-link to="/animal">Animal</router-link>
+    <router-link to="/roform">ReadOnly Form</router-link>
+    <router-link to="/varform">Various Form</router-link>
+    <router-link to="/colorform">Color Form</router-link>
     <div>
         <router-view></router-view>
     </div>

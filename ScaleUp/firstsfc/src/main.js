@@ -8,21 +8,21 @@ import App4 from "./App4.vue";
 import App5 from "./App5.vue";
 import App6 from "./App6.vue";
 
-import FoodItem from './components/FoodItem.vue'
-import FoodItemData from "./components/FoodItemData.vue";
-import TodoItem from "./components/TodoItem.vue";
-import CompOne from "./components/CompOne.vue";
-import CompTwo from "./components/CompTwo.vue";
-import SlotComp from "./components/SlotComp.vue";
-import SlotCard from "./components/SlotCard.vue";
-import SlotName from "./components/SlotName.vue";
+import FoodItem from './components/basiclearn/FoodItem.vue'
+import FoodItemData from "./components/basiclearn/FoodItemData.vue";
+import TodoItem from "./components/basiclearn/TodoItem.vue";
+import CompOne from "./components/basiclearn/CompOne.vue";
+import CompTwo from "./components/basiclearn/CompTwo.vue";
+import SlotComp from "./components/basiclearn/SlotComp.vue";
+import SlotCard from "./components/basiclearn/SlotCard.vue";
+import SlotName from "./components/basiclearn/SlotName.vue";
 
-import ScopeSlot from "./components/ScopeSlot.vue";
-import ScopeSlotArray from "./components/ScopeSlotArray.vue";
-import ScopeSlotArrayObject from "./components/ScopedSlotArrayObject.vue";
-import ScopedSlotStaticData from "./components/ScopedSlotStaticData.vue";
-import ScopedSlotNamed from "./components/ScopedSlotNamed.vue";
-import VueTeleport from "./components/VueTeleport.vue";
+import ScopeSlot from "./components/basiclearn/ScopeSlot.vue";
+import ScopeSlotArray from "./components/basiclearn/ScopeSlotArray.vue";
+import ScopeSlotArrayObject from "./components/basiclearn/ScopedSlotArrayObject.vue";
+import ScopedSlotStaticData from "./components/basiclearn/ScopedSlotStaticData.vue";
+import ScopedSlotNamed from "./components/basiclearn/ScopedSlotNamed.vue";
+import VueTeleport from "./components/basiclearn/VueTeleport.vue";
 
 import App7 from "./App7.vue";
 import FromApiRandom from "./components/httpcomp/FromApiRandom.vue";
@@ -52,6 +52,9 @@ import App11 from "./App11.vue";
 import FoodKinds from "./components/provideinject/FoodKinds.vue";
 import FoodAbout from "./components/provideinject/FoodAbout.vue";
 import Animal from "./components/routingpage/animalcollection.vue";
+import ReadOnlyFormInput from "./components/forminputadv/ReadOnlyFormInput.vue";
+import VariousFormInput from "./components/forminputadv/VariousFormInput.vue";
+import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -164,6 +167,21 @@ const router = createRouter({
             path: '/animal',
             name: 'Animal',
             component: Animal
+        },
+        {
+            path: '/roform',
+            name: 'ReadOnly Form',
+            component: ReadOnlyFormInput
+        },
+        {
+            path: '/varform',
+            name: 'Various Form',
+            component: VariousFormInput
+        },
+        {
+            path: '/colorform',
+            name: 'Color Form',
+            component: ColorFormInput
         }
     ]
 })

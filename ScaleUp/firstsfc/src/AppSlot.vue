@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import SlotComp from './components/SlotComp.vue';
 
 export default {
     data() {

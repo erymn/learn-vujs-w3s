@@ -24,13 +24,13 @@
 
 <script>
 // Import to make CompOne.vue local
-import CompOne from './components/CompOne.vue';
+//import CompOne from './components/basiclearn/CompOne.vue';
 
 export default {
-    components: {
-        // Manage local component
-        'comp-one': CompOne
-    },
+    // components: {
+    //     // Manage local component
+    //     'comp-one': CompOne
+    // },
     data() {
         return {
             newItem: '',
