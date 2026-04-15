@@ -62,6 +62,10 @@ import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
 import TheTransitionComp from "./components/vueanimation/TheTransitionComp.vue";
 import TransitionNameProp from "./components/vueanimation/TransitionNameProp.vue";
 import JsTransitionHook from "./components/vueanimation/JsTransitionHook.vue";
+import TheAppearPop from "./components/vueanimation/TheAppearPop.vue";
+import TransBetweenElem from "./components/vueanimation/TransBetweenElem.vue";
+import InOutModeTransition from "./components/vueanimation/InOutModeTransition.vue";
+import DynamicCompTransition from "./components/vueanimation/DynamicCompTransition.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -227,15 +231,32 @@ const router = createRouter({
             name: 'Js Transition Hooks',
             component: JsTransitionHook
         },
-        // {
-        //     path: '/colorform',
-        //     name: 'Color Form',
-        //     component: ColorFormInput
-        // }
+        {
+            path: '/appearpop',
+            name: 'The Appear Pop',
+            component: TheAppearPop
+        },
+        {
+            path: '/transbetweenelem',
+            name: 'Transition Between Elements',
+            component: TransBetweenElem
+        },
+        {
+            path: '/inoutmode',
+            name: 'In Out Mode',
+            component: InOutModeTransition
+        },
+        {
+            path: '/dynamiccomp',
+            name: 'Dynamic Comp',
+            component: DynamicCompTransition
+        }
     ]
 })
 
 const app12 = createApp(App12)
 app12.use(router)
+app12.component('comp-one', CompOne)
+app12.component('comp-two', CompTwo)
 app12.mount('#app')
 // //-----------Vue Animation-----------
