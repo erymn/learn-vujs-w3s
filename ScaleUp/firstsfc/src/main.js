@@ -56,6 +56,20 @@ import ReadOnlyFormInput from "./components/forminputadv/ReadOnlyFormInput.vue";
 import VariousFormInput from "./components/forminputadv/VariousFormInput.vue";
 import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 
+import App12 from "./App12.vue"
+import SampleCssAnimation from "./components/vueanimation/SampleCssAnimation.vue";  
+import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
+import TheTransitionComp from "./components/vueanimation/TheTransitionComp.vue";
+import TransitionNameProp from "./components/vueanimation/TransitionNameProp.vue";
+import JsTransitionHook from "./components/vueanimation/JsTransitionHook.vue";
+import TheAppearPop from "./components/vueanimation/TheAppearPop.vue";
+import TransBetweenElem from "./components/vueanimation/TransBetweenElem.vue";
+import InOutModeTransition from "./components/vueanimation/InOutModeTransition.vue";
+import DynamicCompTransition from "./components/vueanimation/DynamicCompTransition.vue";
+import TransitionGroupComp from "./components/vueanimation/TransitionGroupComp.vue";
+import AddRemoveWithVMove from "./components/vueanimation/AddRemoveWithVMove.vue";
+import LargerExamples from "./components/vueanimation/LargerExamples.vue";
+
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
 // app.component('food-item-data', FoodItemData)
@@ -149,44 +163,118 @@ import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 
 // createApp(App).mount('#app')
 
-//-----------Using Vue Router-----------
+// //-----------Using Vue Router-----------
+// const router = createRouter({
+//     history: createWebHistory(),
+//     routes: [
+//         {
+//             path: '/foodkinds',
+//             name: 'Food Kinds',
+//             component: FoodKinds
+//         },
+//         {
+//             path: '/foodabout',
+//             name: 'About Food',
+//             component: FoodAbout
+//         },
+//         {
+//             path: '/animal',
+//             name: 'Animal',
+//             component: Animal
+//         },
+//         {
+//             path: '/roform',
+//             name: 'ReadOnly Form',
+//             component: ReadOnlyFormInput
+//         },
+//         {
+//             path: '/varform',
+//             name: 'Various Form',
+//             component: VariousFormInput
+//         },
+//         {
+//             path: '/colorform',
+//             name: 'Color Form',
+//             component: ColorFormInput
+//         }
+//     ]
+// })
+
+// const app11 = createApp(App11)
+// app11.use(router)
+// app11.mount('#app')
+// //-----------Using Vue Router-----------
+
+// //-----------Vue Animation-----------
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/foodkinds',
-            name: 'Food Kinds',
-            component: FoodKinds
+            path: '/sampleanim',
+            name: 'Sample CSS Animation',
+            component: SampleCssAnimation
         },
         {
-            path: '/foodabout',
-            name: 'About Food',
-            component: FoodAbout
+            path: '/basiccssanim',
+            name: 'Basic CSS Animation',
+            component: BasicCssAnimation
         },
         {
-            path: '/animal',
-            name: 'Animal',
-            component: Animal
+            path: '/vuetransition',
+            name: 'Transition Comp',
+            component: TheTransitionComp
         },
         {
-            path: '/roform',
-            name: 'ReadOnly Form',
-            component: ReadOnlyFormInput
+            path: '/transitionnameprop',
+            name: 'Transition Name Prop',
+            component: TransitionNameProp
         },
         {
-            path: '/varform',
-            name: 'Various Form',
-            component: VariousFormInput
+            path: '/jstranshook',
+            name: 'Js Transition Hooks',
+            component: JsTransitionHook
         },
         {
-            path: '/colorform',
-            name: 'Color Form',
-            component: ColorFormInput
+            path: '/appearpop',
+            name: 'The Appear Pop',
+            component: TheAppearPop
+        },
+        {
+            path: '/transbetweenelem',
+            name: 'Transition Between Elements',
+            component: TransBetweenElem
+        },
+        {
+            path: '/inoutmode',
+            name: 'In Out Mode',
+            component: InOutModeTransition
+        },
+        {
+            path: '/dynamiccomp',
+            name: 'Dynamic Comp',
+            component: DynamicCompTransition
+        },
+        {
+            path: '/transitiongroup',
+            name: 'Transition Group',
+            component: TransitionGroupComp
+        },
+        {
+            path: '/addremovewithvmove',
+            name: 'Add Remove With VMove',
+            component: AddRemoveWithVMove
+        },
+        {
+            path: '/larger',
+            name: 'Larger Examples',
+            component: LargerExamples
         }
     ]
 })
 
-const app11 = createApp(App11)
-app11.use(router)
-app11.mount('#app')
-//-----------Using Vue Router-----------
+const app12 = createApp(App12)
+app12.use(router)
+app12.component('comp-one', CompOne)
+app12.component('comp-two', CompTwo)
+app12.mount('#app')
+// //-----------Vue Animation-----------
