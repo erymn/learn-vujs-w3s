@@ -1,6 +1,6 @@
 <template>
     <div v-on:click="countClicks">
-        <h2>{{ foodName }} <img src="../assets/img_quality.svg" v-show="foodIsFavorite" width="32" height="32"></h2>
+        <h2>{{ foodName }} <img src="../../assets/img_quality.svg" v-show="foodIsFavorite" width="32" height="32"></h2>
         <p>{{ foodDesc }}</p>
         <button v-on:click="toggleFavorite">Favorite</button>
         <!-- <p>{{ message }}</p> -->
