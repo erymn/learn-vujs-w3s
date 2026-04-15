@@ -59,6 +59,7 @@ import ColorFormInput from "./components/forminputadv/ColorFormInput.vue";
 import App12 from "./App12.vue"
 import SampleCssAnimation from "./components/vueanimation/SampleCssAnimation.vue";  
 import BasicCssAnimation from "./components/vueanimation/BasicCssAnimation.vue";
+import TheTransitionComp from "./components/vueanimation/TheTransitionComp.vue";
 
 // const app = createApp(App)
 // app.component('food-item', FoodItem)
@@ -209,11 +210,11 @@ const router = createRouter({
             name: 'Basic CSS Animation',
             component: BasicCssAnimation
         },
-        // {
-        //     path: '/animal',
-        //     name: 'Animal',
-        //     component: Animal
-        // },
+        {
+            path: '/vuetransition',
+            name: 'Transition Comp',
+            component: TheTransitionComp
+        },
         // {
         //     path: '/roform',
         //     name: 'ReadOnly Form',
